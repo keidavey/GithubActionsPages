@@ -37,7 +37,7 @@ jobs:
     - name: Clean Github Pages branch
       run: |
         git checkout --orphan gh-pages
-        git rm -rf
+        git rm -rf .
         
     - name: Move Cucumber reports to new directory
       run: | 
