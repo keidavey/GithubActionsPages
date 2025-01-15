@@ -36,15 +36,15 @@ jobs:
     - name: Run Test with Maven
       run: mvn test -DTest=Run_Smoke_Test.java -q
 
-    - name: Clean Github Pages branch
-      run: |
-        git checkout --orphan gh-pages
-        git rm -rf .
-        
     - name: Move Cucumber reports to new directory
       run: | 
         mkdir Cukes
         cp -r target/cucumber-reports/* Cukes/
+
+    - name: Clean Github Pages branch
+      run: |
+        git checkout --orphan gh-pages
+        git rm -rf .
 
     - name: Deploy to Pages!
       run: |
