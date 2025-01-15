@@ -9,8 +9,6 @@
 name: Maven V.1
 
 on:
-  schedule:
-    - cron: "0 8 * * *"
   workflow_dispatch: 
     inputs:
       name: 
