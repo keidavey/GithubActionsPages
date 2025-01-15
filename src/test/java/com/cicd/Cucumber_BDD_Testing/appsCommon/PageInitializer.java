@@ -1,7 +1,6 @@
 package com.cicd.Cucumber_BDD_Testing.appsCommon;
 
 import com.cicd.Cucumber_BDD_Testing.pages.GooglePage;
-import com.chromatech.Cucumber_BDD_Testing.pages.*;
 
 public class PageInitializer {
 
