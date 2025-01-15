@@ -9,7 +9,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/com/chromatech/Cucumber_BDD_Testing/features",
         glue = {"com.chromatech.Cucumber_BDD_Testing.stepDefinitions", "hooks"},
         tags = "@Smoke",
-        dryRun = false
+        dryRun = true
 )
 public class Run_CTSMS_Smoke_Test extends AbstractTestNGCucumberTests {
 }
