@@ -27,7 +27,7 @@ jobs:
         cache: maven
 
     - name: Install Chrome dependencies
-      run: sudo apt-get update && sudo apt-get install -y google-chrome-stable libappindicator1 libnss3 fonts-liberation libgbm-dev
+      run: sudo apt-get update && sudo apt-get install -y google-chrome-stable libappindicator-gtk3 libnss3 fonts-liberation libgbm-dev
 
     - name: Set up ChromeDriver
       run: |
