@@ -33,4 +33,4 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: Run Smoke Tests
-      run: mvn clean -q -Dcucumber.options="--tags @Smoke"
+      run: mvn clean -q -DTest=Smoke
