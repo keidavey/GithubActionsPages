@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Hello Step
       env:
-        ENTERED_NAME: ${{ github.event.input.name }}
+        ENTERED_NAME: ${{ github.event.inputs.name }}
       run: echo "Hello! ${ENTERED_NAME}"
       
     - name: Checkout repo
@@ -48,8 +48,8 @@ jobs:
 
     - name: Deploy to Pages!
       run: |
-        git config --local user.email ""
-        git config --local user.name ""
+        git config --local user.email "keindavey@gmail.com"
+        git config --local user.name "keidavey"
         git add Cukes/*
         git commit -m "Update Github Pages"
         git remote set-url origin http://keidavey:${{secrets.ACTIONS_TOKEN}}@github.com/GithubActionsPages.git
