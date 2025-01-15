@@ -97,7 +97,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Chroma-Test-Automation</projectName>
+                            <projectName>bbb</projectName>
                             <!-- optional, per documentation set this to "true" to bypass generation
                             >>>>>>> branch 'main' of
                             https://github.com/chromatechacademy/Dreamers-Instructor-Test-Automation.git
