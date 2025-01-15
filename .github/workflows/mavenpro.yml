@@ -25,7 +25,7 @@ jobs:
           server-id: github
  
       - name: Run Tests
-        run: mvn -q -Dtest=Run_CTSMS_Smoke_Test test
+        run: mvn -q -Dtest=Smoke test
  
       - name: Upload Cucumber Report
         uses: actions/upload-artifact@v2
