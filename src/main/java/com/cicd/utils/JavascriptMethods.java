@@ -1,4 +1,4 @@
-package com.chromatech.utils;
+package com.cicd.utils;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package com.chromatech.utils;
+package com.cicd.utils;
 
 public class FrameworkConstants {
 

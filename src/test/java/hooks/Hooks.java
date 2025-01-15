@@ -1,8 +1,8 @@
 package hooks;
 
-import com.chromatech.Cucumber_BDD_Testing.appsCommon.PageInitializer;
-import com.chromatech.utils.CucumberLogUtils;
-import com.chromatech.utils.WebDriverUtils;
+import com.cicd.Cucumber_BDD_Testing.appsCommon.PageInitializer;
+import com.cicd.utils.CucumberLogUtils;
+import com.cicd.utils.WebDriverUtils;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;

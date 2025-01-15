@@ -5,13 +5,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.chromatech</groupId>
-    <artifactId>bbb</artifactId>
+    <groupId>com.cicd</groupId>
+    <artifactId>githubactionspages</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>avatars-test-automation</name>
+    <name>ci-cd-pipeline-proj</name>
     <!-- FIXME change it to the project's website -->
-    <url>https://chromatechacademy.net/</url>
+    <url>https://github.com/keidavey/GithubActionsPages</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,8 +70,7 @@
     </dependencies>
 
     <build>
-        <!-- lock down plugins versions to avoid using Maven defaults (may be moved
-            to parent
+        <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent
         pom) -->
         <plugins>
             <!-- clean lifecycle, see
@@ -84,35 +83,36 @@
                     <testFailureIgnore>true</testFailureIgnore> <!-- to get report even when fails -->
                 </configuration>
             </plugin>
-<!--            &lt;!&ndash; to convert .json files to MAVEN CUCUMBER REPORTS reports &ndash;&gt;-->
-<!--            <plugin>-->
-<!--                <groupId>net.masterthought</groupId>-->
-<!--                <artifactId>maven-cucumber-reporting</artifactId>-->
-<!--                <version>5.0.0</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>execution</id>-->
-<!--                        <phase>test</phase> &lt;!&ndash; the report will be created on test phase &ndash;&gt;-->
-<!--                        <goals>-->
-<!--                            <goal>generate</goal>-->
-<!--                        </goals>-->
-<!--                        <configuration>-->
-<!--                            <projectName>bbb</projectName>-->
-<!--                            &lt;!&ndash; optional, per documentation set this to "true" to bypass generation-->
-<!--                            of Cucumber Reports entirely, defaults to false if not specified &ndash;&gt;-->
-<!--                            &lt;!&ndash; <skip>false</skip> &ndash;&gt;-->
-<!--                            &lt;!&ndash; output directory for the generated report &ndash;&gt;-->
-<!--                            <outputDirectory>${project.build.directory}</outputDirectory>-->
-<!--                            &lt;!&ndash; optional, defaults to outputDirectory if not specified &ndash;&gt;-->
-<!--                            <inputDirectory>${project.build.directory}</inputDirectory>-->
-<!--                            <jsonFiles>-->
-<!--                                &lt;!&ndash; supports wildcard or name pattern &ndash;&gt;-->
-<!--                                <param>**/cucumber.json</param> &lt;!&ndash; it will take .json file &ndash;&gt;-->
-<!--                            </jsonFiles>-->
-<!--                        </configuration>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <!-- to convert .json files to MAVEN CUCUMBER REPORTS reports -->
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>maven-cucumber-reporting</artifactId>
+                <version>5.0.0</version>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>test</phase>
+                        <!-- the report will be created on test phase -->
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>ci-cd-pipeline-proj</projectName>
+                            <!-- optional, per documentation set this to "true" to bypass generation
+                            of Cucumber Reports entirely, defaults to false if not specified -->
+                            <!-- <skip>false</skip> -->
+                            <!-- output directory for the generated report -->
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <!-- optional, defaults to outputDirectory if not specified -->
+                            <inputDirectory>${project.build.directory}</inputDirectory>
+                            <jsonFiles>
+                                <!-- supports wildcard or name pattern -->
+                                <param>**/cucumber.json</param> <!-- it will take .json file -->
+                            </jsonFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>3.1.0</version>

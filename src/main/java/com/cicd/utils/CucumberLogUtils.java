@@ -1,4 +1,4 @@
-package com.chromatech.utils;
+package com.cicd.utils;
 
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;

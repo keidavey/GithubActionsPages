@@ -34,7 +34,7 @@ jobs:
     #   run: mvn -B package --file pom.xml
 
     - name: Run Test with Maven
-      run: mvn test -DTest=Run_CTSMS_Smoke_Test.java -q
+      run: mvn test -DTest=Run_Smoke_Test.java -q
 
     - name: Clean Github Pages branch
       run: |
