@@ -12,7 +12,9 @@ jobs:
 
     steps:
     - name: Hello Step
-      run: echo "Hello ${{ github.event.input.name }}!"
+      env:
+        ENTERED_NAME: ${{ github.event.input.name }}
+      run: echo "Hello! " ENTERED_NAME
       
     - name: Checkout repo
       uses: actions/checkout@v4
