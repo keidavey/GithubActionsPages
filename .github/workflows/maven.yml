@@ -43,6 +43,7 @@ jobs:
       run: |
         git checkout --orphan gh-pages
         git rm -rf .
+        ls target/cucumber-reports/
 
     - name: Move Cucumber reports to new directory
       run: | 
