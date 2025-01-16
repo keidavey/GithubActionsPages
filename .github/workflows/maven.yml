@@ -24,14 +24,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        # cache: maven
         
     # - name: Set up Chrome
     #   uses: browser-actions/setup-chrome@v1
     # - run: chrome --version
-
-    # - name: Build with Maven
-    #   run: mvn -B package --file pom.xml
 
     - name: Run Test with Maven
       run: |
@@ -42,8 +38,11 @@ jobs:
     - name: Clean Github Pages branch
       run: |
         git checkout --orphan gh-pages
+        mkdir Cukes
+        cp -r target/cucumber-reports/* Cukes/
         git rm -rf .
         ls target/cucumber-reports/
+        
 
     - name: Move Cucumber reports to new directory
       run: | 
@@ -59,9 +58,3 @@ jobs:
         git commit -m "Update Github Pages"
         git remote set-url origin https://keidavey:${{secrets.ACTIONS_TOKEN}}@github.com/keidavey/GithubActionsPages.git
         git push --force origin gh-pages
-        
-    # - name: Deploy Pages
-    #   uses: JamesIves/github-pages-deploy-action@v4
-    #   with:
-    #     branch: gh-pages
-    #     folder: ./test-output
