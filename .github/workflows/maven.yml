@@ -52,7 +52,7 @@ jobs:
         git config --local user.name "keidavey"
         git add Cukes/*
         git commit -m "Update Github Pages"
-        git remote set-url origin http://keidavey:${{secrets.ACTIONS_TOKEN}}@github.com/GithubActionsPages.git
+        git remote set-url origin https://keidavey:${{secrets.ACTIONS_TOKEN}}@github.com/keidavey/GithubActionsPages.git
         git push origin gh-pages
         
     # - name: Deploy Pages
