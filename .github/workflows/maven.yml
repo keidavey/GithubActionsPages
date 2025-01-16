@@ -34,7 +34,10 @@ jobs:
     #   run: mvn -B package --file pom.xml
 
     - name: Run Test with Maven
-      run: mvn test -DTest=Run_Smoke_Test.java -q
+      run: |
+            mvn test -DTest=Run_Smoke_Test.java -q
+            echo "check target folder"
+            ls -R target
 
     - name: Clean Github Pages branch
       run: |
@@ -45,6 +48,7 @@ jobs:
       run: | 
         mkdir Cukes
         cp -r target/cucumber-reports/* Cukes/
+        ls -R Cukes
 
     - name: Deploy to Pages!
       run: |
