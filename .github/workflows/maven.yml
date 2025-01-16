@@ -36,15 +36,15 @@ jobs:
     - name: Run Test with Maven
       run: mvn test -DTest=Run_Smoke_Test.java -q
 
-    - name: Move Cucumber reports to new directory
-      run: | 
-        mkdir Cukes
-        cp -r target/cucumber-reports/* Cukes/
-
     - name: Clean Github Pages branch
       run: |
         git checkout --orphan gh-pages
         git rm -rf .
+
+    - name: Move Cucumber reports to new directory
+      run: | 
+        mkdir Cukes
+        cp -r target/cucumber-reports/* Cukes/
 
     - name: Deploy to Pages!
       run: |
@@ -53,7 +53,7 @@ jobs:
         git add Cukes/*
         git commit -m "Update Github Pages"
         git remote set-url origin https://keidavey:${{secrets.ACTIONS_TOKEN}}@github.com/keidavey/GithubActionsPages.git
-        git push origin gh-pages
+        git push --force origin gh-pages
         
     # - name: Deploy Pages
     #   uses: JamesIves/github-pages-deploy-action@v4
