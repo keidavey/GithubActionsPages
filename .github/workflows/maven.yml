@@ -37,7 +37,7 @@ jobs:
     - name: Clean Github Pages branch
       run: |
         git checkout --orphan gh-pages
-        git rm -rf .
+        # git rm -rf .
         
 
     - name: Move Cucumber reports to new directory
@@ -52,4 +52,4 @@ jobs:
         git add docs/*
         git commit -m "Update Github Pages"
         git remote set-url origin https://keidavey:${{secrets.ACTIONS_TOKEN}}@github.com/keidavey/GithubActionsPages.git
-        git push --force origin gh-pages
+        git push origin gh-pages
