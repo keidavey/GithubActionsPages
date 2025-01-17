@@ -33,28 +33,24 @@ jobs:
       run: |
             mvn test -DTest=Run_Smoke_Test.java -q
             echo "check target folder"
-            ls -R target
 
     - name: Clean Github Pages branch
       run: |
+        git branch -D origin gh-pages
         git checkout --orphan gh-pages
-        mkdir Cukes
-        cp -r target/cucumber-reports/* Cukes/
-        git rm -rf .
-        ls target/cucumber-reports/
+        # git rm -rf .
         
 
     - name: Move Cucumber reports to new directory
       run: | 
-        mkdir Cukes
-        cp -r target/cucumber-reports/* Cukes/
-        ls -R Cukes
+        mkdir docs
+        cp -r target/cucumber-reports/* docs/
 
     - name: Deploy to Pages!
       run: |
         git config --local user.email "keindavey@gmail.com"
         git config --local user.name "keidavey"
-        git add Cukes/*
+        git add docs/*
         git commit -m "Update Github Pages"
         git remote set-url origin https://keidavey:${{secrets.ACTIONS_TOKEN}}@github.com/keidavey/GithubActionsPages.git
-        git push --force origin gh-pages
+        git push origin gh-pages
