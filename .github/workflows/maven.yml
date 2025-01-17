@@ -36,6 +36,7 @@ jobs:
 
     - name: Clean Github Pages branch
       run: |
+        git branch -D gh-pages
         git checkout --orphan gh-pages
         # git rm -rf .
         
