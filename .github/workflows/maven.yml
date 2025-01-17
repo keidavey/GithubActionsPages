@@ -37,7 +37,6 @@ jobs:
     - name: Clean Github Pages branch
       run: |
         git checkout --orphan gh-pages
-        cp -r target/cucumber-reports/* docs/
         git rm -rf .
         
 
